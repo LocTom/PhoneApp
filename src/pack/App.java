@@ -1,4 +1,4 @@
-package targil2;
+package pack;
 
 interface App {
 
