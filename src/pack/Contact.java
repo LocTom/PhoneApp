@@ -3,12 +3,14 @@ package pack;
 public class Contact {
 	int number;
 	String name;
+	String chat;
 	
 	//Counstructor (makes contact)
 	public Contact(int num, String nam)
 	{
 		number = num;
 		name = nam;
+		chat = null;
 	}
 	
 	//This method prints the contact
@@ -28,5 +30,6 @@ public class Contact {
 	{
 		return number;
 	}
+	
 
 }
