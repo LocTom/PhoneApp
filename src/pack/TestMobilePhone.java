@@ -14,8 +14,14 @@ public class TestMobilePhone {
 			system.out.println("choose: 1,2 ,3,4");
 			switch(a):
 			case(1):// phonebook
-				phonebookmain();
-				break:
+				PhoneBookMain(book);
+				break;
+			case(2):
+			
+			case(3):
+			
+			case(4):
+			
 			
 				
 			
