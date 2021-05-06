@@ -16,7 +16,7 @@ public class Sms implements App {
 		book = a;
 	}
 	
-	void add_chat(String name, String txt){	
+	void add(String name, String txt){	
 		
 		int i = 0;
 		for (i=0; i<book.size(); i++){
@@ -25,6 +25,8 @@ public class Sms implements App {
 				System.out.println("chat has been added");
 				return;
 			}
+			else 
+				system.out.ln("Contact does not exist");
 		}
 	}	
 
