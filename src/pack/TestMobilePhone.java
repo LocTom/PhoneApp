@@ -4,8 +4,27 @@ public class TestMobilePhone {
 	
 	public static void main(String[] args) {
 		
-		App app1 = new App();
+		PhoneBook book = new PhoneBook(); // use the constructor of ArrayList<contact>
+		Calendar calendar= new Calendar();
+		Sms chat = new Sms(book);
+		Media med = new Media();
 		
+		while(true)
+		{
+			system.out.println("choose: 1,2 ,3,4");
+			switch(a):
+			case(1):// phonebook
+				phonebookmain();
+				break:
+			
+				
+			
+			
+			
+			
+		}
+		
+
 		
 		
 
