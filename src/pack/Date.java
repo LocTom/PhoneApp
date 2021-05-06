@@ -1,10 +1,10 @@
 package pack;
 
-public class Date {
+public class Date implements Comparable<Date>{
 	int month;
 	int day;
 	int year;
-	
+
 	//Counstructor (makes contact)
 	public Date(int mon, int da, int ye)
 	{
@@ -12,27 +12,41 @@ public class Date {
 		day = da;
 		year = ye;
 	}
-	
+
 	//This method prints the contact
-	void printDate()
+	void printdate()
 	{
-		System.out.println(day+"/ "+ month + "/"+ year);
+		System.out.println(this.toString());
 	}
-	
-	
+
+	public String toString() {
+		return("the date is: " +day+"/"+ month + "/"+ year);
+	}
+
 	// The following methods are get mehtod
 	int getDay()
 	{
 		return day;
 	}
-	
+
 	int getMonth()
 	{
 		return month;
 	}
-	
+
 	int getYear()
 	{
 		return year;
 	}
+	
+	public int compareTo(Date date) {
+		if(this.year!=date.year) {
+			return this.year-date.year;} 
+		if(this.month!=date.month) {
+			return this.month-date.month;}
+		if(this.day!=date.day) {
+			return this.day-date.day;
+		}
+		return 0;
+}
 }

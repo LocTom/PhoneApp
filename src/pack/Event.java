@@ -1,31 +1,20 @@
 package pack;
 
-public class Event extends Date{
-	Date date;
-	String name;
+ abstract public class Event implements Comparable<Event> {
 
-	//Counstructor (makes event)
-	public Event(int mon,int da,int ye, String nam) //have an issue here trying to figrue out how to do this constructor
-	{
-		date= new Date(mon,da,ye);
-		name = nam;
-	}
+	int time;
+	Date date ;
 	
-	//This method prints the contact
-	void printEvent()
-	{
-		System.out.println(name+", "+ date);
+	public Event(int timee, Date datee) {
+		time=timee;
+		date=datee;
 	}
+	 public abstract void print();
+	 
+	 public int compareTo(Event event) {
+		 return this.date.compareTo(event.date);
+	 }
 	
+	 public  abstract Contact getContact();
 	
-	// The following methods are get mehtod
-	String getEventName()
-	{
-		return name;
-	}
-	
-	Date getEventDate()
-	{
-		return date;
-	}
 }
