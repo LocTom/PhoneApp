@@ -1,9 +1,13 @@
-package targil2;
+package pack;
 
 public class TestMobilePhone {
+	
 	public static void main(String[] args) {
 		
-		PhoneBook book = new PhoneBook();
+		App app1 = new App();
+		
+		
+		
 
 	}
 
