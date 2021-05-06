@@ -1,6 +1,6 @@
 package pack;
 
-interface App {
+public interface App {
   public void add();
 
 }
