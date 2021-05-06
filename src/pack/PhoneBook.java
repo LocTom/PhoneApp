@@ -88,7 +88,7 @@ class PhoneBook extends ArrayList<Contact> implements App{
 
 
 //this function adds a contact to the Phone book
-void addContact(String name, int number)
+void add(String name, int number)
 {
 	if (findContact(name)== 0)
 	{
