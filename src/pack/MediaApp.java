@@ -96,7 +96,7 @@ class MediaApp implements App{
 	}
 	
 	
-public static void main(String args[]) {
+public static void run(String args[]) {
 		//Scanner scan1 = new Scanner(System.in);
 		MediaApp playlist = new MediaApp();
 		int a;
