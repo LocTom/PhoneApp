@@ -1,4 +1,4 @@
-package targil2;
+package pack;
 
 import java.util.ArrayList;
 import java.util.Collections;
