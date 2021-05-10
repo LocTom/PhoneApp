@@ -32,12 +32,12 @@ class MediaApp implements App{
 		String name, type;
 		double length;
 		Scanner s = new Scanner(System.in);
-		System.out.println("enter name of media\n");
+		System.out.println("Enter name of media\n");
 		name = s.nextLine();
-		System.out.println("enter length of media in minutes\n");
+		System.out.println("Enter length of media in minutes\n");
 		length = s.nextDouble();
 		s.nextLine(); //get rid of end of line symbol
-		System.out.println("enter type of media music or video\n");
+		System.out.println("Enter type of media music or video\n");
 		type = s.nextLine();
 		
 		
@@ -52,11 +52,11 @@ class MediaApp implements App{
 			
 		}
 		else// didn't choose music/video
-			throw new Exception("must be eather type 'music' or 'video'\n");
+			throw new Exception("Must be eather type 'music' or 'video'\n");
 		}
 		
 		catch (InputMismatchException e) {
-			System.out.println("please enter valid input\n");
+			System.out.println("Please enter valid input\n");
 		}
 		catch (Exception e)// if didn't enter music/video
 		{
@@ -80,7 +80,7 @@ class MediaApp implements App{
 		}
 			
 		}
-		System.out.println("no such media");
+		System.out.println("No such media");
 	}
 	
 	public void playAll() {
@@ -114,7 +114,7 @@ public static void run(String args[]) {
 					+"(4) Exit\n");
 			
 			a = scan.nextInt();// get users choice and call function accordingly 
-			scan.nextLine();// get rid of EOL symbol
+			scan.nextLine();// get rid of End of line symbol
 			
 			switch(a) 
 			{
@@ -122,7 +122,7 @@ public static void run(String args[]) {
 				playlist.add();
 				break;
 			case 2://play media by name
-				System.out.println("enter name of media\n");
+				System.out.println("Enter name of media\n");
 				String mName = scan.nextLine();
 				playlist.play(mName);
 				break;
@@ -134,13 +134,13 @@ public static void run(String args[]) {
 				return;
 				
 			default:
-				System.out.println("choose an option between 1-4\n");
+				System.out.println("Choose an option between 1-4\n");
 			}//try
 			
 			}// switch case
 			catch (Exception e)
 			{
-				System.out.println(" please enter a valid input\n");
+				System.out.println("Please enter a valid input\n");
 			}
 			
 
