@@ -16,7 +16,7 @@ public class Sms implements App {
 		book = a;
 	}
 	
-	void add(String name, String txt){	
+	public void add(String name, String txt){	
 		
 		int i = 0;
 		for (i=0; i<book.size(); i++){
@@ -32,7 +32,7 @@ public class Sms implements App {
 	
 	
 
-	void delete_chat(String name){		
+	public void delete_chat(String name){		
 		int i = 0;
 		for (i=0; i<book.size(); i++){
 			if (book.get(i).getContactName().toUpperCase().equalsIgnoreCase(name)){
@@ -43,7 +43,7 @@ public class Sms implements App {
 		}
 	}
 
-	void printConvByName(String name) {
+	public void printConvByName(String name) {
 		int i=0;
 		for (i=0; i<book.size(); i++){
 			if (book.get(i).getContactName().toUpperCase().equalsIgnoreCase(name)) {
@@ -53,7 +53,7 @@ public class Sms implements App {
 		}
 	}
 	
-	void search_string(String str) {
+	public void search_string(String str) {
 		int i = 0;
 		for (i=0; i<book.size(); i++){
 			if(book.get(i).text.contains(str))
@@ -63,7 +63,7 @@ public class Sms implements App {
 		
 	}
 
-	void printAll() {
+	public void printAll() {
 		
 		int i = 0;
 		for (i=0; i<book.size(); i++){
@@ -78,68 +78,69 @@ public class Sms implements App {
 	
 	
 	
-}
 
-public void run(Book book){
-		MediaApp playlist = new MediaApp();
-		int a;
 
-		
-		while(true) 
-		{
-			Scanner scan = new Scanner(System.in);
-			try
+	public void run(Book book){
+			MediaApp playlist = new MediaApp();
+			int a;
+
+
+			while(true) 
 			{
-				System.out.println("What you you like to do?\r\n"
-					+"(1) Add a new chat\r\n"
-					+"(2) Erase a chat\r\n"
-					+"(3) Print a chat by contacts name\r\n"
-					+"(4) Search by sentence\r\n"	   
-					+"(5) Exit\n");
-			
-			a = scan.nextInt();// get users choice and call function accordingly 
-			scan.nextLine();// get rid of End Of Line symbol
-			
-			switch(a) 
-			{
-			case 1://add new chat
-				System.out.println("Enter name of contanc\n");
-				String name = scan.nextLine();
-				System.out.println("Enter sms\n");	
-				String txt = scan.nextLine();	
-				book.add(name,txt);
-				break;
-			case 2://delete chat
-				System.out.println("Enter name of contacts chat you want to delete\n");
-				String name = scan.nextLine();
-				book.delete(name);
-				break;
-			case 3://print contacts chat
-				System.out.println("Enter name of contacts chat you want to print\n");
-				String name = scan.nextLine();
-				book.printConvByName(name);
-				break;
-			case 4:// search chat by sentence 
-				System.out.println("Enter sentence you want to search for\n");
-				String sent = scan.nextLine();	
-				book.search_string(sent);
-				break;
-			case 5:
-				book.printAll();
-				break;	
-				
-			default:
-				System.out.println("Choose an option between 1-4\n");
-			}//try
-			
-			}// switch case
-			catch (Exception e)
-			{
-				System.out.println("Please enter a valid input\n");
-			}
-			
+				Scanner scan = new Scanner(System.in);
+				try
+				{
+					System.out.println("What you you like to do?\r\n"
+						+"(1) Add a new chat\r\n"
+						+"(2) Erase a chat\r\n"
+						+"(3) Print a chat by contacts name\r\n"
+						+"(4) Search by sentence\r\n"	   
+						+"(5) Exit\n");
 
-	}// while
-		
-	}//run
+				a = scan.nextInt();// get users choice and call function accordingly 
+				scan.nextLine();// get rid of End Of Line symbol
 
+				switch(a) 
+				{
+				case 1://add new chat
+					System.out.println("Enter name of contanc\n");
+					String name = scan.nextLine();
+					System.out.println("Enter sms\n");	
+					String txt = scan.nextLine();	
+					book.add(name,txt);
+					break;
+				case 2://delete chat
+					System.out.println("Enter name of contacts chat you want to delete\n");
+					String name = scan.nextLine();
+					book.delete(name);
+					break;
+				case 3://print contacts chat
+					System.out.println("Enter name of contacts chat you want to print\n");
+					String name = scan.nextLine();
+					book.printConvByName(name);
+					break;
+				case 4:// search chat by sentence 
+					System.out.println("Enter sentence you want to search for\n");
+					String sent = scan.nextLine();	
+					book.search_string(sent);
+					break;
+				case 5:
+					book.printAll();
+					break;	
+
+				default:
+					System.out.println("Choose an option between 1-4\n");
+				}//try
+
+				}// switch case
+				catch (Exception e)
+				{
+					System.out.println("Please enter a valid input\n");
+				}
+
+
+			}// while
+
+		}//run
+
+}// class
