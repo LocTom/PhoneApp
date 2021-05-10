@@ -80,7 +80,7 @@ public class Sms implements App {
 	
 
 
-	public void run(Book book){
+	public void run(Sms sms){
 			MediaApp playlist = new MediaApp();
 			int a;
 
@@ -94,8 +94,9 @@ public class Sms implements App {
 						+"(1) Add a new chat\r\n"
 						+"(2) Erase a chat\r\n"
 						+"(3) Print a chat by contacts name\r\n"
-						+"(4) Search by sentence\r\n"	   
-						+"(5) Exit\n");
+						+"(4) Search by sentence\r\n"	
+						+"(5) Print all chats\r\n";	   
+						+"(6) Exit\n");
 
 				a = scan.nextInt();// get users choice and call function accordingly 
 				scan.nextLine();// get rid of End Of Line symbol
@@ -107,29 +108,32 @@ public class Sms implements App {
 					String name = scan.nextLine();
 					System.out.println("Enter sms\n");	
 					String txt = scan.nextLine();	
-					book.add(name,txt);
+					sms.add(name,txt);
 					break;
 				case 2://delete chat
 					System.out.println("Enter name of contacts chat you want to delete\n");
 					String name = scan.nextLine();
-					book.delete(name);
+					sms.delete(name);
 					break;
 				case 3://print contacts chat
 					System.out.println("Enter name of contacts chat you want to print\n");
 					String name = scan.nextLine();
-					book.printConvByName(name);
+					sms.printConvByName(name);
 					break;
 				case 4:// search chat by sentence 
 					System.out.println("Enter sentence you want to search for\n");
 					String sent = scan.nextLine();	
-					book.search_string(sent);
+					sms.search_string(sent);
 					break;
 				case 5:
-					book.printAll();
-					break;	
+					sms.printAll();
+					break;
+				case 6:
+					scan.close();
+					return;
 
 				default:
-					System.out.println("Choose an option between 1-4\n");
+					System.out.println("Choose an option between 1-6\n");
 				}//try
 
 				}// switch case
