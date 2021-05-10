@@ -80,7 +80,7 @@ class MediaApp implements App{
 		}
 			
 		}
-		System.out.println("No such media");
+		System.out.println("no such media");
 	}
 	
 	public void playAll() {
@@ -96,9 +96,8 @@ class MediaApp implements App{
 	}
 	
 	
-public static void run(String args[]) {
-		//Scanner scan1 = new Scanner(System.in);
-		MediaApp playlist = new MediaApp();
+public void run(MediaApp playlist) {
+		//MediaApp playlist = new MediaApp();
 		int a;
 
 		
@@ -114,7 +113,7 @@ public static void run(String args[]) {
 					+"(4) Exit\n");
 			
 			a = scan.nextInt();// get users choice and call function accordingly 
-			scan.nextLine();// get rid of End of line symbol
+			scan.nextLine();// get rid of EOL symbol
 			
 			switch(a) 
 			{
