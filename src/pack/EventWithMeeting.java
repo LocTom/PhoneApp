@@ -1,16 +1,16 @@
-package pack;
+package matala2;
 
 public class EventWithMeeting extends Event {
 	
 	Contact contact;
 	
-	public EventWithMeeting(Contact contacte, int time , Date date) {
-		super(time,date);
+	public EventWithMeeting(Contact contacte, int time , DateTime dateTime) {
+		super(time,dateTime);
 		contact=contacte;
 	}
 	
 	public String toString() {
-		return(this.date.toString()+" " + "the time is: "+this.time +" "+ this.contact.toString());
+		return(this.dateTime.toString()+" " + "the time is: "+this.time +" "+ this.contact.toString());
 	}
 	
 	

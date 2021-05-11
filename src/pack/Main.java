@@ -1,21 +1,22 @@
-package pack;
-
+package matala2;
 
 public class Main {
 
 	public static void main(String[] args) { 
+		
+	/*
 	PhoneBook book = new PhoneBook(); // use the constructor of ArrayList<contact>
 	Contact contact = new Contact(852,"Sarah");
 	book.add(contact);
 	Calendar calendar= new Calendar();
 	
-	Date date= new Date(2,14,2021);
+	Date date= new Date(2,14,2021,10,15,45);
 	EventWithMeeting eventmeeting  = new EventWithMeeting(contact,54,date);
 	calendar.addEvent(eventmeeting,book);
 	
 	
 	Contact contact_2 = new Contact(852,"Tomer");
-	Date date_2= new Date(2,14,2021);
+	Date date_2= new Date(2,14,2021,11,15,48);
 	EventWithMeeting eventmeeting_2  = new EventWithMeeting(contact_2,54,date_2);
 	calendar.addEvent(eventmeeting_2,book);
 	calendar.printAccordingToADate(date);
@@ -29,21 +30,16 @@ public class Main {
 	
 	calendar.printAllEvents();
 	
-	book.add(contact_2);
-	Date date_4= new Date(2,14,2021);
-	EventWithMeeting eventmeeting_4  = new EventWithMeeting(contact_2,54,date_4);
-	calendar.addEvent(eventmeeting_4,book);
-	calendar.printAllEvents();
-	
-	EventWithoutMeeting eventnomeeting  = new EventWithoutMeeting("hello",12,date_2);
-	calendar.addEvent(eventnomeeting, book);
-	calendar.printAllEvents();
 	}
-	
-	
-	
-	
-	
-	
-	
+	*/
+		
+		PhoneBook book = new PhoneBook(); // use the constructor of ArrayList<contact>
+		Contact contact = new Contact(852,"Sarah");
+		book.add(contact);	
+		Contact contact2 = new Contact(856,"a");
+		book.add(contact2);	
+
+	 Calendar calendar= new Calendar();
+	 calendar.run(book);
+}
 }

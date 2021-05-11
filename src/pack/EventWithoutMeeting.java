@@ -1,16 +1,16 @@
-package pack;
+package matala2;
 
 public class EventWithoutMeeting extends Event{
 
 	String Description;
 	
-	public EventWithoutMeeting(String description, int time , Date date) {
-		super(time,date);
+	public EventWithoutMeeting(String description, int time , DateTime dateTime) {
+		super(time,dateTime);
 		Description=description;
 	}
 	
 	public String toString() {
-		return(this.date.toString()+" " + "the time is: "+this.time +" "+ this.Description);
+		return(this.dateTime.toString()+" " + "the time is: "+this.time +" "+ this.Description);
 	}
 	
 	

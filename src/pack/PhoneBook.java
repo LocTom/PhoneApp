@@ -1,4 +1,4 @@
-package pack;
+package matala2;
 
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.Scanner;
  public class PhoneBook extends ArrayList<Contact>{
 
-	public static void PhoneBookMain(PhoneBook book) 
+	public static void main(PhoneBook book) 
 	{
 		//PhoneBook book = new PhoneBook();
 		String name;
@@ -180,17 +180,25 @@ import java.util.Scanner;
 		}
 	
 	//this finction returns all contacts with chosen name 
-	void findContact(String name)
+	public Contact findContact(String name)
 	{
+		System.out.println("in FindContact");
 		String name1;
 		name = name.toUpperCase();
 		for(int i = 0; i < this.size(); i++)
 		{
 			name1 = this.get(i).getContactName().toUpperCase();
 
-			if (name.equalsIgnoreCase(name1)) 
-			 	this.get(i).printContact();  			 
+			if (name.equalsIgnoreCase(name1)) {
+				System.out.println("found contact");
+				System.out.println(this.get(i));
+				Contact contact = this.get(i);
+				return contact;  	
+				
+			}
+			 	 		 
 		} 
+		return null;
 	}
 
 	//this function erases a single contact by name

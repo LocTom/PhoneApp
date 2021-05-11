@@ -1,4 +1,4 @@
-package pack;
+package matala2;
 
 public class Contact {
 	int number;

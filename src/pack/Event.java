@@ -1,18 +1,18 @@
-package pack;
+package matala2;
 
  abstract public class Event implements Comparable<Event> {
 
 	int time;
-	Date date ;
+	DateTime dateTime ;
 	
-	public Event(int timee, Date datee) {
+	public Event(int timee, DateTime dateTimee) {
 		time=timee;
-		date=datee;
+		dateTime=dateTimee;
 	}
 	 public abstract void print();
 	 
 	 public int compareTo(Event event) {
-		 return this.date.compareTo(event.date);
+		 return event.dateTime.compareTo(this.dateTime);
 	 }
 	
 	 public  abstract Contact getContact();
