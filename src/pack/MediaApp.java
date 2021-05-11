@@ -96,7 +96,7 @@ class MediaApp implements App{
 	}
 	
 	
-public void run(MediaApp playlist) {
+public void run() {
 		//MediaApp playlist = new MediaApp();
 		int a;
 
@@ -118,18 +118,18 @@ public void run(MediaApp playlist) {
 			switch(a) 
 			{
 			case 1://add new media
-				playlist.add();
+				this.add();
 				break;
 			case 2://play media by name
 				System.out.println("Enter name of media\n");
 				String mName = scan.nextLine();
-				playlist.play(mName);
+				this.play(mName);
 				break;
 			case 3://play all media
-				playlist.playAll();
+				this.playAll();
 				break;
 			case 4:
-				scan.close();
+				//scan.close();
 				return;
 				
 			default:

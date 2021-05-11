@@ -1,4 +1,4 @@
-package matala2;
+package pack;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -10,12 +10,20 @@ import java.util.Scanner;
 
 public class Calendar {
 
-	ArrayList<Event> events;
+	static ArrayList<Event> events;
 	PhoneBook book;
-	
+	/*
+	static void eraseContactEvent(Contact cont)
+	{
+		
+		for (Event e:events) {
+			
+		}
+	}
+	*/
 	public void run() {       
 		
-		// events = new ArrayList<Event>();
+		events = new ArrayList<Event>();
 		int a;
 		while(true)
 		{
@@ -35,7 +43,7 @@ public class Calendar {
 				switch (a) {
 				
 				case 1 :// add an event
-					Event event=ScanEvent(book);
+					Event event = ScanEvent(book);
 					addEvent(event,book);
 					break;
 					
@@ -78,8 +86,7 @@ public class Calendar {
 			}
 			
 		
-		
-	
+
 	
 	public Calendar(PhoneBook a) {
 		events = new ArrayList<Event>(); // Create an ArrayList of Event
@@ -140,7 +147,6 @@ public class Calendar {
 	public Contact scanExistingContact(PhoneBook book) {
 		String name;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("enter a nameeeeeeeeeeeeeeeee\n");
 		System.out.println("enter a name\n");
 		
 		name= scan.nextLine();
@@ -153,13 +159,20 @@ public class Calendar {
 		int time,res;
 		String description;
 		Scanner scan = new Scanner(System.in);
-		DateTime dateTime = scanDateTime();
-		System.out.println("enter a duration\n");
-		time= scan.nextInt();
 		System.out.println("1 for Event With Meeting and 2 for Event Without meeting \n");
 		res= scan.nextInt();
 		scan.nextLine();
-		if (res == 1) {
+		if (res == 1 && book.isEmpty())
+		{
+			System.out.println("first add contact");
+			return null;
+		}
+		
+		DateTime dateTime = scanDateTime();
+		System.out.println("enter a duration\n");
+		time= scan.nextInt();
+		scan.nextLine();
+		if (res == 1) {		
 			book.printBook();
 			Contact contact = scanExistingContact(book);
 			EventWithMeeting eventmeeting = new EventWithMeeting(contact, time , dateTime); 
@@ -177,9 +190,9 @@ public class Calendar {
 	
 	void addEvent(Event event, PhoneBook book)
 	{
-		System.out.println("in add");
-		if( event instanceof EventWithMeeting) {   //meeting with contacts of PhoneBook
-			if(book.contains(((EventWithMeeting) event).contact)) {   //use the functions of ArrayList
+		
+		if( event instanceof EventWithMeeting) {   //meeting with contacts of PhoneBook		
+			if(book.contains(((EventWithMeeting) event).contact)) {   //use the functions of ArrayList			
 				events.add(event);}}
 		if( event instanceof EventWithoutMeeting) {
 			events.add(event);
@@ -210,7 +223,6 @@ public class Calendar {
 			System.out.println("There is no events for this date");
 		}
 	}
-	
 	
 	void printAccordingToAContact( Contact contacte) {
 		

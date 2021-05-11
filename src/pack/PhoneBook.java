@@ -1,4 +1,4 @@
-package matala2;
+package pack;
 
 
 import java.util.ArrayList;
@@ -11,7 +11,9 @@ import java.util.Scanner;
 
 	public void run() 
 	{
-		//PhoneBook book = new PhoneBook();
+		
+		//Calendar.eraseContactEvent("dd");
+		
 		String name;
 		int numb;
 		while(true) {
@@ -47,7 +49,7 @@ import java.util.Scanner;
 				this.eraseContact(name); 
 				break;
 			case 3:
-				book.printBook();
+				this.printBook();
 				break;
 			case 4:
 				System.out.println("enter a name to search:\n");
@@ -84,7 +86,7 @@ import java.util.Scanner;
 				this.fileReader(name);
 				break;			
 			case 11:
-				break;	
+				return;	
 				
 			default:
 				break; 
@@ -209,6 +211,7 @@ import java.util.Scanner;
 			    String n = this.get(i).getContactName();
 				if(n.equalsIgnoreCase(name))
 				{
+					
 					this.remove(i);
 					break;
 				}

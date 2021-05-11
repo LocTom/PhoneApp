@@ -1,24 +1,28 @@
-package matala2;
+package pack;
 
 public class Contact {
 	int number;
 	String name;
+	String text;
+	
 	
 	//Counstructor (makes contact)
 	public Contact(int num, String nam)
 	{
 		number = num;
 		name = nam;
+		text = null;
 	}
 	
-	public String toString() {
-		return ("the name of the contact is: "+name+", and his number is "+ number);
+	void printName()
+	{
+		System.out.println(name);
 	}
 	
 	//This method prints the contact
 	void printContact()
 	{
-		System.out.println(this.toString());
+		System.out.println(name+", "+ number);
 	}
 	
 	
@@ -32,5 +36,6 @@ public class Contact {
 	{
 		return number;
 	}
+	
 
 }

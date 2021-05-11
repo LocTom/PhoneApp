@@ -1,5 +1,7 @@
 package pack;
 
+import java.util.*;
+
 public class TestMobilePhone {
 	
 	public static void main(String[] args) {
@@ -7,7 +9,7 @@ public class TestMobilePhone {
 		PhoneBook book = new PhoneBook(); // use the constructor of ArrayList<contact>
 		Calendar calendar= new Calendar(book);
 		Sms sms = new Sms(book);
-		Media media = new Media();
+		MediaApp media = new MediaApp();
 		
 		while(true)
 		{
@@ -21,44 +23,42 @@ public class TestMobilePhone {
 					+"(4) Media\r\n"   
 					+"(5) Exit\n");
 			
-			a = scan.nextInt();// get users choice and call function accordingly 
+			int a = scan.nextInt();// get users choice and call function accordingly 
 			scan.nextLine();// get rid of EOL symbol
 				
-			switch(a):
+			switch(a) {
 			case 1:// phonebook
 				book.run();
 				break;
 			case 2:
 				calendar.run();
 				break;
-			case(3):
+			case 3:
 				sms.run();
-				retun;
-			case(4):
+				break;
+			case 4:
 				media.run();
-				retun;
-			case5:
+				break;
+			case 5:
+				scan.close();
 				return;
 			
 			default:
-				system.out.println("choose number 1-5");
+				System.out.println("choose number 1-5");
 			}
+			}
+			
 			catch (Exception e)
 			{
 				System.out.println("Please enter a valid input\n");
 			}
 			
+		}//while
+			
 				
-			
-			
-			
-			
-		}
 		
-
-		
-		
-
+			
+			
 	}
 
 }

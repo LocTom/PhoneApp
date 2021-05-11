@@ -1,4 +1,4 @@
-package matala2;
+package pack;
 
 public class Date implements Comparable<Date>{
 	int month;

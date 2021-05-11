@@ -26,7 +26,7 @@ public class Sms implements App {
 				return;
 			}
 			else 
-				system.out.ln("Contact does not exist");
+				System.out.println("Contact does not exist");
 		}
 	}	
 	
@@ -44,8 +44,8 @@ public class Sms implements App {
 	}
 
 	public void printConvByName(String name) {
-		int i=0;
-		for (i=0; i<book.size(); i++){
+		
+		for (int i=0; i<book.size(); i++){
 			if (book.get(i).getContactName().toUpperCase().equalsIgnoreCase(name)) {
 				System.out.println(book.get(i).text);
 				return;
@@ -84,40 +84,46 @@ public class Sms implements App {
 			MediaApp playlist = new MediaApp();
 			int a;
 
-
 			while(true) 
 			{
-				Scanner scan = new Scanner(System.in);
 				try
 				{
+				if(book.isEmpty()) 
+				{
+						throw new Exception("Phonebook is empty\n");
+				}
+				
+				Scanner scan = new Scanner(System.in);
+				
 					System.out.println("What you you like to do?\r\n"
 						+"(1) Add a new chat\r\n"
 						+"(2) Erase a chat\r\n"
 						+"(3) Print a chat by contacts name\r\n"
 						+"(4) Search by sentence\r\n"	
-						+"(5) Print all chats\r\n";	   
+						+"(5) Print all chats\r\n"	   
 						+"(6) Exit\n");
-
+					
+				
 				a = scan.nextInt();// get users choice and call function accordingly 
 				scan.nextLine();// get rid of End Of Line symbol
-
+				String name;
 				switch(a) 
 				{
 				case 1://add new chat
-					System.out.println("Enter name of contanc\n");
-					String name = scan.nextLine();
+					System.out.println("Enter name of contanct\n");
+					name = scan.nextLine();
 					System.out.println("Enter sms\n");	
 					String txt = scan.nextLine();	
 					this.add(name,txt);
 					break;
 				case 2://delete chat
 					System.out.println("Enter name of contacts chat you want to delete\n");
-					String name = scan.nextLine();
-					this.delete(name);
+					name = scan.nextLine();
+					this.delete_chat(name);
 					break;
 				case 3://print contacts chat
 					System.out.println("Enter name of contacts chat you want to print\n");
-					String name = scan.nextLine();
+					name = scan.nextLine();
 					this.printConvByName(name);
 					break;
 				case 4:// search chat by sentence 
@@ -139,7 +145,8 @@ public class Sms implements App {
 				}// switch case
 				catch (Exception e)
 				{
-					System.out.println("Please enter a valid input\n");
+					System.out.println(e.getMessage());
+					return;
 				}
 
 

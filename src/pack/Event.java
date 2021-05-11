@@ -1,4 +1,4 @@
-package matala2;
+package pack;
 
  abstract public class Event implements Comparable<Event> {
 
