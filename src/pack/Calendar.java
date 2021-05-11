@@ -11,8 +11,9 @@ import java.util.Scanner;
 public class Calendar {
 
 	ArrayList<Event> events;
+	PhoneBook book;
 	
-	public  void run(PhoneBook book) {       
+	public void run() {       
 		
 		// events = new ArrayList<Event>();
 		int a;
@@ -80,8 +81,9 @@ public class Calendar {
 		
 	
 	
-	public Calendar() {
+	public Calendar(PhoneBook a) {
 		events = new ArrayList<Event>(); // Create an ArrayList of Event
+		book = a;
 	}
 	
 	public Date scanDate() {
