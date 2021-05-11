@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.Scanner;
  public class PhoneBook extends ArrayList<Contact>{
 
-	public static void main(PhoneBook book) 
+	public void run(PhoneBook book) 
 	{
 		//PhoneBook book = new PhoneBook();
 		String name;
