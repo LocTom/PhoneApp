@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.Scanner;
  public class PhoneBook extends ArrayList<Contact>{
 
-	public void run(PhoneBook book) 
+	public void run() 
 	{
 		//PhoneBook book = new PhoneBook();
 		String name;
@@ -38,13 +38,13 @@ import java.util.Scanner;
 				name = scan.nextLine();
 				System.out.println("enter a number:\n");
 				numb = scan.nextInt();
-				book.addContact(name, numb);
-				book.printBook();
+				this.addContact(name, numb);
+				this.printBook();
 				break;	
 			case 2:
 				System.out.println("enter a name to earase:\n");
 				name = scan.nextLine();
-				book.eraseContact(name); 
+				this.eraseContact(name); 
 				break;
 			case 3:
 				book.printBook();
@@ -52,24 +52,24 @@ import java.util.Scanner;
 			case 4:
 				System.out.println("enter a name to search:\n");
 				name = scan.nextLine();
-				book.findContact(name);
+				this.findContact(name);
 				break;
 			case 5:
-				book.sortName();
+				this.sortName();
 				break;
 			case 6:
-				book.sortNumber();
+				this.sortNumber();
 				break;
 			case 7:
-				book.deleteDoubles();
+				this.deleteDoubles();
 				break;
 			case 8:
-				book.FlipBook();
+				this.FlipBook();
 				break;
 			case 9:
 				System.out.println("enter a name of file:\n");
 				name = scan.nextLine();
-				book.SaveBook(name);
+				this.SaveBook(name);
 				String path;
 				try {
 					path = new File(".").getCanonicalPath();
@@ -81,7 +81,7 @@ import java.util.Scanner;
 			case 10:
 				System.out.println("enter a name of file:\n");
 				name = scan.nextLine();
-				book.fileReader(name);
+				this.fileReader(name);
 				break;			
 			case 11:
 				break;	
