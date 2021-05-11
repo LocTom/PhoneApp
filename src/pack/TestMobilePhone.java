@@ -6,8 +6,8 @@ public class TestMobilePhone {
 		
 		PhoneBook book = new PhoneBook(); // use the constructor of ArrayList<contact>
 		Calendar calendar= new Calendar();
-		Sms chat = new Sms(book);
-		Media med = new Media();
+		Sms sms = new Sms();
+		Media media = new Media();
 		
 		while(true)
 		{
@@ -17,12 +17,14 @@ public class TestMobilePhone {
 				book.run();
 				break;
 			case 2:
-				calendar.run(
+				calendar.run(book);
 				break;
 			case(3):
-			
+				sms.run(book);
+				retun;
 			case(4):
-			
+				media.run();
+				retun;
 			case5:
 				return;
 			
