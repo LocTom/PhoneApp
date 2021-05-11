@@ -190,7 +190,6 @@ import java.util.Scanner;
 			name1 = this.get(i).getContactName().toUpperCase();
 
 			if (name.equalsIgnoreCase(name1)) {
-				System.out.println("found contact");
 				System.out.println(this.get(i));
 				Contact contact = this.get(i);
 				return contact;  	
