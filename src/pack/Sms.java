@@ -80,7 +80,7 @@ public class Sms implements App {
 	
 
 
-	public void run(Sms sms){
+	public void run(){
 			MediaApp playlist = new MediaApp();
 			int a;
 
@@ -108,25 +108,25 @@ public class Sms implements App {
 					String name = scan.nextLine();
 					System.out.println("Enter sms\n");	
 					String txt = scan.nextLine();	
-					sms.add(name,txt);
+					this.add(name,txt);
 					break;
 				case 2://delete chat
 					System.out.println("Enter name of contacts chat you want to delete\n");
 					String name = scan.nextLine();
-					sms.delete(name);
+					this.delete(name);
 					break;
 				case 3://print contacts chat
 					System.out.println("Enter name of contacts chat you want to print\n");
 					String name = scan.nextLine();
-					sms.printConvByName(name);
+					this.printConvByName(name);
 					break;
 				case 4:// search chat by sentence 
 					System.out.println("Enter sentence you want to search for\n");
 					String sent = scan.nextLine();	
-					sms.search_string(sent);
+					this.search_string(sent);
 					break;
 				case 5:
-					sms.printAll();
+					this.printAll();
 					break;
 				case 6:
 					scan.close();
