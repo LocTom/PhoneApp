@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.*;
 import java.io.*; 
 import java.util.Scanner;
- public class PhoneBook extends ArrayList<Contact>{
+ public class PhoneBook extends ArrayList<Contact> implements App{
 
 	public void run() 
 	{

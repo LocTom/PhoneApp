@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 
-public class Calendar {
+public class Calendar implements App{
 
 	static ArrayList<Event> events;
 	PhoneBook book;
