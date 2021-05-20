@@ -12,18 +12,11 @@ public class Calendar {
 
 	static ArrayList<Event> events;
 	PhoneBook book;
-	/*
-	static void eraseContactEvent(Contact cont)
-	{
-		
-		for (Event e:events) {
-			
-		}
-	}
-	*/
+	
+	
 	public void run() {       
 		
-		events = new ArrayList<Event>();
+		 events = new ArrayList<Event>();
 		int a;
 		while(true)
 		{
@@ -69,7 +62,6 @@ public class Calendar {
 					printAllEvents();
 					break;
 				case 7: 
-					scan.close();
 					return;
 					
 				default:
@@ -199,7 +191,7 @@ public class Calendar {
 		}
 	}
 
-	void deleteEvent(Event event) {
+	static void deleteEvent(Event event) {
 		events.remove(event);
 	}
 	
@@ -243,6 +235,41 @@ public class Calendar {
 		if (events_3.size() == 0) {
 			System.out.println("There is no events for this contact");
 		}
+	}
+	
+	// get event by contact name
+	 static public  ArrayList<Event> EventByContact(Contact contacte) {
+		
+		ArrayList<Event> events_3 = new ArrayList<Event>(); // Create an ArrayList of Event
+		
+		for (int counter = 0; counter < events.size(); counter++) { 	
+			if(events.get(counter) instanceof EventWithMeeting )
+			{
+				if(events.get(counter).getContact()==contacte) {
+					events_3.add(events.get(counter));
+				}
+			}
+		}
+		if (events_3.isEmpty()) 
+
+			return null;
+		else
+			return events_3;
+		
+				
+	}
+	
+	static public void deleteEventBycontact(Contact contacte) 
+	{
+		ArrayList<Event> event= EventByContact(contacte);
+		
+		if (event == null) {
+			return;
+		}
+		else
+			for (Event e:event) {
+				deleteEvent(e);
+			}
 	}
 	
 	void printAllEvents() {

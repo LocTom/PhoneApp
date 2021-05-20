@@ -135,7 +135,6 @@ public class Sms implements App {
 					this.printAll();
 					break;
 				case 6:
-					scan.close();
 					return;
 
 				default:

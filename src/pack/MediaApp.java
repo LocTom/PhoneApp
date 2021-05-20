@@ -129,7 +129,6 @@ public void run() {
 				this.playAll();
 				break;
 			case 4:
-				//scan.close();
 				return;
 				
 			default:

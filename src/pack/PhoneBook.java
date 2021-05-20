@@ -12,8 +12,6 @@ import java.util.Scanner;
 	public void run() 
 	{
 		
-		//Calendar.eraseContactEvent("dd");
-		
 		String name;
 		int numb;
 		while(true) {
@@ -205,13 +203,14 @@ import java.util.Scanner;
 	//this function erases a single contact by name
 		void eraseContact(String name) 
 		{
-
 			for(int i = 0; i < this.size(); i++)
 			{
 			    String n = this.get(i).getContactName();
+			   
 				if(n.equalsIgnoreCase(name))
 				{
-					
+					System.out.println(n);
+					Calendar.deleteEventBycontact(this.get(i));
 					this.remove(i);
 					break;
 				}
@@ -221,8 +220,7 @@ import java.util.Scanner;
 		}
 		
 		
-		//deletes doubles in contacts
-		//deletes doubles in contacts
+		
 		//deletes doubles in contacts
 		public void deleteDoubles() {
 	        for (int j = 0; j < this.size()-1; j++) {
